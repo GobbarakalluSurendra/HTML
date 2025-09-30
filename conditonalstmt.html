@@ -1,0 +1,115 @@
+AGE:
+
+
+<html>
+<head>
+<script>
+function age()
+{
+/*if(document.getElementById("t1").value>=18)
+{
+window.alert("Eligible for Voting");
+}
+else{
+window.alert("Not eligible for voting");
+}*/
+
+/*
+if
+{
+document.getElementById("res").innerHTML="Eligible for voting";
+}
+else
+{
+document.getElementById("res").innerHTML=" Not Eligible for voting";
+}*/
+
+}
+</script>
+</head>
+<body>
+<h1> Enter age: <input type="text" id="t1"></h1>
+<button type="button" onclick="age()">VERIFY</button>
+<h2 id="res"></h2>
+</body>
+</html>
+
+
+
+less or more:
+
+
+<html>
+<head>
+<script>
+function relation()
+{
+if(document.getElementById("t1").value==document.getElementById("t2").value)
+{
+document.getElementById("res").innerHTML="both are equal";
+}
+else if(document.getElementById("t1").value>document.getElementById("t2").value)
+{
+document.getElementById("res").innerHTML="First number is >than second number";
+}
+else{
+document.getElementById("res").innerHTML="First number is <than second number";
+}
+}
+</script>
+</head>
+<body>
+<h1> Enter first no: <input type="text" id="t1"></h1><br>
+<h1> Enter second no: <input type="text" id="t2"></h1><br>
+<button type="button" onclick="relation()">Check</button><br>
+<h2 id="res"></h2>
+</body>
+</html>
+
+
+percentage calculation:
+<html>
+<head>
+<script>
+function percentage()
+{
+document.getElementById("p").value=(document.getElementById("om").value/document.getElementById("mm").value)*100;
+var p1 =document.getElementById("p").value;
+document.getElementById("g").value="";
+var g;
+switch(Math.floor(p1/10))
+{
+case 9:g="outstanding";
+break;
+case 8:g="excellent";
+break;
+case 7:g="A";
+break;
+case 6:g="B";
+break;
+case 5: g="C";
+break;
+case 4: g="pass";
+break;
+default:"fail";
+}
+document.getElementById("g").value=g;
+}
+</script>
+</head>
+<body>
+<h1> Enter Max.Marks: <input type="text" id="mm"></h1><br>
+<h1> Enter ObtainedMarks: <input type="text" id="om"></h1><br>
+<button type="button" onclick="percentage()">Percentage</button><br>
+<h1> Percentage: <input type="text" id="p"</h1><br>
+<h1> Grade:<input type=text" id="g"></h1<br>
+</body>
+</html>
+
+
+
+
+
+
+
+
