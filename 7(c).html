@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>array object example</title>
+</head>
+<body>
+<h2>array object demo</h2>
+<button onclick="showproperties()">show array properties</button>
+<button onclick="usemethod()">use array methods</button>
+<p id="output"></p>
+<script>
+let fruits=["apple","banana","mango","orange"];
+function showproperties()
+{
+let info="";
+info +="array elements" +fruits +"<br>";
+info +="array lenght" + fruits.length+"<br>";
+document.getElementById("output").innerHTML=info;
+}
+function usemethod()
+{
+let result="";
+fruits.push("grapes");
+fruits.unshift("papaya");
+let last = fruits.pop();
+let first = fruits.shift();
+let index = fruits.indexOf("mango");
+let joined = fruits.join("-");
+let sliced = fruits.slice(1,3);
+let reversed = fruits.slice().reverse();
+result += "after push/ unshift/ pop/ shift "+fruits+"<br>";
+result += "removed first "+first+"removed last"+last+"<br>";
+result += "index of mango "+index+"<br>";
+result += "joined with(-) "+joined+"<br>";
+result += "sliced (1 to 3) "+sliced+"<br>";
+result += "reversed copy "+reversed+"<br>";
+document.getElementById("output").innerHTML=result;
+}
+</script>
+</body>
+</html>
