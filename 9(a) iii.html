@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Prime Numbers</title>
+<script>
+function isPrime(num) {
+    if (num < 2) return false;
+    for (let i = 2; i <= Math.sqrt(num); i++) {
+        if (num % i === 0) return false;
+    }
+    return true;
+}
+function displayPrimes() {
+    let n = parseInt(document.getElementById("num").value);
+    let result = "";
+    for (let i = 2; i <= n; i++) {
+        if (isPrime(i)) {
+            result += i + " ";
+        }
+    }
+    document.getElementById("output").innerHTML = "Prime Numbers: " + result;
+}
+</script>
+</head>
+<body>
+<h2>Prime Number Display</h2>
+Enter a number: <input type="number" id="num">
+<button onclick="displayPrimes()">Show Primes</button>
+<p id="output"></p>
+</body>
+</html>
