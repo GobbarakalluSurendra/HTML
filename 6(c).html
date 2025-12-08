@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>JavaScript Input Methods</title>
+ <script>
+ // 1. Using prompt()
+ function takePrompt() {
+ let name = prompt("Enter your name:");
+ document.getElementById("output").innerHTML =
+ "Hello " + name + ", you entered using prompt().";
+ }
+ // 2. Using confirm() (Yes/No input)
+ function takeConfirm() {
+ let choice = confirm("Do you like JavaScript?");
+ if (choice) {
+ document.getElementById("output").innerHTML =
+ "You clicked OK → You like JavaScript!";
+ } else {
+ document.getElementById("output").innerHTML =
+ "You clicked Cancel → You don't like JavaScript.";
+ }
+ }
+ // 3. Using HTML input field
+ function takeInputField() {
+ let value = document.getElementById("txtInput").value;
+ document.getElementById("output").innerHTML =
+ "You entered using input field: " + value;
+ }
+ </script>
+</head>
+<body>
+ <h1>JavaScript Input Demonstration</h1>
+ <!-- Method 1: prompt() -->
+ <button onclick="takePrompt()">Take Input with prompt()</button><br><br>
+ <!-- Method 2: confirm() -->
+ <button onclick="takeConfirm()">Take Input with confirm()</button><br><br>
+ <!-- Method 3: HTML Input Field -->
+ <input type="text" id="txtInput" placeholder="Type something here">
+ <button onclick="takeInputField()">Submit Input Field</button><br><br>
+ <p id="output" style="color:green; font-weight:bold;"></p>
+</body>
+</html>
