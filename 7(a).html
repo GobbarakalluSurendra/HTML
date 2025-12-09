@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>document object example</title>
+</head>
+<body>
+<h2 id = "heading">welcome to java script document object demo</h2>
+<p id = "para">this is a sample paragraph</p>
+<button onclick="changecontent()">changecontent()</button>
+<button onclick="showinfo()">show document info</button>
+<p id="output"></p>
+<script>
+function changecontent(){
+document.getElementById("heading").innerHTML="heading changed!";
+document.getElementById("para").innerHTML="the paragraph text has been changed";
+}
+function showinfo(){
+let info="";
+info +="document title"+document.title+"<br>";
+info +="document url"+document.URL+"<br>";
+info +="last modified"+document.lastModified+"<br>";
+info +="number of forms"+document.forms.length+"<br>";
+info +="number of links"+document.links.length+"<br>";
+document.getElementById("output").innerHTML=info;
+}
+</script>
+</body>
+</html>
