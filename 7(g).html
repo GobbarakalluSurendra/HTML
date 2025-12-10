@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>date object example</title>
+</head>
+<body>
+<h2>java script date object properties and methods</h2>
+<script>
+let now = new Date();
+document.write("<b>current date and time </b>"+now+"<br><br>");
+document.write("<b>getfullyear()</b>"+now.getFullYear()+"<br>");
+document.write("<b>getmonth()</b>"+now.getMonth()+"(0 = jan, 11 = dec)<br>");
+document.write("<b>getdate()</b>"+now.getDate()+"(day of month)<br>");
+document.write("<b>getday()</b>"+now.getDay()+"(0 = sunday, 6 = saturday)<br>");
+document.write("<b>gethours()</b>"+now.getHours()+"<br>");
+document.write("<b>getminutes()</b>"+now.getMinutes()+"<br>");
+document.write("<b>getseconds()</b>"+now.getSeconds()+"<br>");
+document.write("<b>getmilliseconds()</b>"+now.getMilliseconds()+"<br>");
+document.write("<b>gettime()</b>"+now.getTime()+"milliseconds since jan1, 1970<br>");
+let newDate=new Date();
+newDate.setFullYear(2030);
+newDate.setMonth(11);
+newDate.setDate(25);
+document.write("<b>now.toDateString()</b>"+now.toDateString()+"<br>");
+document.write("<b>now.toTimeString()</b>"+now.toTimeString()+"<br>");
+document.write("<b>now.toUTCString()</b>"+now.toUTCString()+"<br>");
+document.write("<b>now.toISOString()</b>"+now.toISOString()+"<br>");
+document.write("<b>now.toLocaleTimeString()</b>"+now.toLocaleTimeString()+"<br>");
+document.write("<b>now.toLocaleDateString()</b>"+now.toLocaleDateString()+"<br>");
+</script>
+</body>
+</html>
