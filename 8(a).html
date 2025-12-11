@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+function findlarge()
+{
+var n1=parseInt(prompt("enter first  number"));
+var n2=parseInt(prompt("enter second number"));
+var n3=parseInt(prompt("enter third number"));
+if(n1==n2 && n2==n3)
+{
+alert("EQUAL NUMBERS");
+}
+else{
+var largest=n1;
+if(n2>largest){
+largest = n2;
+}
+if(n3>largest){
+largest = n3;
+}
+alert(largest,"-LARGEST NUMBER");
+}
+}
+</script>
+</head>
+<body onload="findlarge()">
+<h1>largest number</h1>
+</body>
+</html>
