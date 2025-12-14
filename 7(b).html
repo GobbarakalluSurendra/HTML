@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> window object example</title>
+</head>
+<body>
+<h2> window object demo</h2>
+<button onclick="showproperties()">show window properties</button>
+<button onclick="opennewwindow()">open new window</button>
+<button onclick="closenewwindow()">close new window</button>
+<button onclick="showalert()">show alert</button>
+<button onclick="askconfirm()">show confirm</button>
+<button onclick="askprompt()">show prompt</button>
+<p id="output"></p>
+<script>
+function showproperties()
+{
+let info="";
+info += "window inner width" + window.innerWidth +"px<br>";
+info += "window inner height" + window.innerHeight + "px<br>";
+info += "screen width" + window.screen.width + "px<br>";
+info += "screen height" + window.screen.height +"px<br>";
+info += "location" + window.location.href+"<br>";
+info += "navigator(browser)" + window.navigator.userAgent+"<br>";
+document.getElementById("output").innerHTML= info;
+}
+function opennewwindow(){
+let myWindow;
+myWindow = window.open("https://www.example.com","_blank","width = 400, height = 300");
+}
+function closenewwindow(){
+if(myWindow)
+{
+myWindow.close();
+}
+else{
+alert("no window to close");
+}
+}
+function showalert(){
+window.alert("hello! this is an alert message");
+}
+function askconfirm(){
+let result=window.confirm("do you like java script");
+document.getElementById("output").innerHTML = result? "you clicked ok" : "you clicked cancel";
+}
+function askprompt(){
+let name= window.prompt("enter your name");
+if(name)
+{
+document.getElementById("output").innerHTML="hello"+name+"!";
+}
+}
+</script>
+</body>
+</html>
