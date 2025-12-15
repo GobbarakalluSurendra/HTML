@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>math object example</title>
+</head>
+<body>
+<h2>math object demo</h2>
+<button onclick="showproperties()">show math properties</button>
+<button onclick="usemethod()">use math methods</button>
+<p id="output"></p>
+<script>
+function showproperties()
+{
+let info="";
+info +="pi" + Math.PI+"<br>";
+info +="e(euler's number)" + Math.E+"<br>";
+info +="square root of 2" +Math.SQRT2+"<br>";
+info +="square root of 1/2" + Math.SQRT1_2+"<br>";
+info +="natural log of 2"+Math.LN10+"<br>";
+info +="log base 2 of e"+Math.LOG2E+"<br>";
+info +="log base of 10"+Math.LOG10E+"<br>";
+document.getElementById("output").innerHTML=info;
+}
+function usemethod()
+{
+let result ="";
+result +="absolute of -25"+Math.abs(-25)+"<br>";
+result +="round 4.7"+Math.round(4.7)+"<br>";
+result +="ceil 4.2"+Math.ceil(4.2)+"<br>";
+result +="floor 4.9"+Math.floor(4.9)+"<br>";
+result +="max of(3,9,12)"+Math.max(3,9,12)+"<br>";
+result +="min of(3,9,12)"+Math.min(3,9,12)+"<br>";
+result +="power of 2^5"+Math.pow(2,5)+"<br>";
+result +="square root of 49"+Math.sqrt(49)+"<br>";
+result +="random number(0 - 1)"+Math.random+"<br>";
+result +="trignometry sin(90)"+Math.sin(Math.PI/2)+"<br>";
+document.getElementById("output").innerHTML = result;
+}
+</script>
+</body>
+</html>
