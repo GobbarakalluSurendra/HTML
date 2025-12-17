@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Regex Object Properties and Methods</title>
+</head>
+<body>
+<h2>JavaScript Regex Object Properties and Methods</h2>
+<script>
+let pattern = /script/gi;
+let text = "javascript is powerful i love scripting with script";
+
+document.write("<b>source:</b> " + pattern.source + "<br>");
+document.write("<b>global:</b> " + pattern.global + "<br>");
+document.write("<b>ignore case:</b> " + pattern.ignoreCase + "<br>");
+document.write("<b>multi line:</b> " + pattern.multiline + "<br><br>");
+
+document.write("<b>test:</b> " + pattern.test(text) + " (checks if pattern exists)<br>");
+
+let result = pattern.exec(text);
+document.write("<b>exec():</b> first match -> " + result[0] + " at index " + result.index + "<br>");
+
+let matches = text.match(pattern);
+document.write("<b>match():</b> " + matches + " (all matches)<br>");
+
+document.write("<b>search():</b> " + text.search(pattern) + " (position of first match)<br>");
+
+document.write("<b>replace():</b> " + text.replace(pattern, "CODE") + "<br>");
+
+let parts = text.split(/st/);
+document.write("<b>split():</b> " + parts + " (split by 'st' using regex)<br>");
+</script>
+</body>
+</html>
