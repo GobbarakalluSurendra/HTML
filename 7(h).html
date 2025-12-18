@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>user defined example</title>
+</head>
+<body>
+<h2>java script user defined object</h2>
+<script>
+function student(name,age,course)
+{
+this.name=name;
+this.age=age;
+this.course=course;
+this.display=function()
+{
+return "name "+this.name+"age "+this.age+"course "+this.course;
+}
+this.getName=function(){
+return this.name;
+};
+this.setName=function(newName){
+this.name=newName;
+};
+}
+let student1 = new student("vijay",20,"computer science");
+document.write("<b>original student details</b><br>");
+document.write(student1.display()+"<br><br>");
+document.write("<b>getter getName()</b>"+student1.getName()+"<br>");
+student1.setName("ramesh");
+document.write("<b>after set name(ramesh)</b>"+student1.display()+"<br>");
+</script>
+</body>
+</html>
