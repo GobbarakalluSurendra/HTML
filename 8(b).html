@@ -1,0 +1,35 @@
+<html>
+<head>
+<script>
+function showday(){
+var day=parseInt(document.getElementById("dayno").value);
+var result;
+switch(day){
+case 1: result = "monday";
+break;
+case 2: result="tuesday";
+break;
+case 3: result="wednesday";
+break;
+case 4: result="thursday";
+break;
+case 5: result="friday";
+break;
+case 6:result="saturday";
+break;
+case 7: result="sunday";
+break;
+default: result ="invalid number";
+}
+document.getElementById("output").innerHTML=result;
+}
+</script>
+</head>
+<body>
+<h1> display week days using switch case</h1>
+<label>enter a number(1-7)</label>
+<input type="number" id ="dayno" min ="1" max="7">
+<button onclick="showday()">show day</button>
+<p><b>result</b> <span id ="output"></span></p>
+</body>
+</html>
