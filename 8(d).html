@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Object Loops Example</title>
+<script>
+let std = { name: "Raju", age: 20, course: "Data Science" };
+function forin() {
+  let output = "";
+  for (let key in std) {
+    output += key + " : " + std[key] + "<br>";
+  }
+  document.getElementById("forin1").innerHTML = output;
+}
+function foreach() {
+  let output = "";
+  Object.keys(std).forEach(key => {
+    output += key + " : " + std[key] + "<br>";
+  });
+  document.getElementById("foreach1").innerHTML = output;
+}
+function forof() {
+  let output = "";
+  for (let [key, value] of Object.entries(std)) {
+    output += key + " : " + value + "<br>";
+  }
+  document.getElementById("forof1").innerHTML = output;
+}
+</script>
+</head>
+<body>
+<h2>Printing Data of Object using Different Loops</h2>
+<button onclick="forin()">Print using for...in loop</button>
+<p><b>for...in loop:</b><br><span id="forin1"></span></p>
+<button onclick="foreach()">Print using forEach() loop</button>
+<p><b>forEach() loop:</b><br><span id="foreach1"></span></p>
+<button onclick="forof()">Print using for...of loop</button>
+<p><b>for...of loop:</b><br><span id="forof1"></span></p>
+</body>
+</html>
