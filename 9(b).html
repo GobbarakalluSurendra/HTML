@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Number Operations</title>
+<script>
+function factorial(n) {
+    if (n < 0) return "Not defined for negative numbers";
+    let fact = 1;
+    for (let i = 1; i <= n; i++) fact *= i;
+    return fact;
+}
+
+function fibonacci(n) {
+    if (n < 0) return "Invalid input";
+    let series = [0, 1];
+    for (let i = 2; i < n; i++) {
+        series[i] = series[i - 1] + series[i - 2];
+    }
+    return series.slice(0, n).join(" ");
+}
+
+function isPrime(num) {
+    if (num < 2) return false;
+    for (let i = 2; i <= Math.sqrt(num); i++)
+        if (num % i === 0) return false;
+    return true;
+}
+
+function primeNumbers(n) {
+    if (n < 2) return "No prime numbers";
+    let primes = [];
+    for (let i = 2; i <= n; i++)
+        if (isPrime(i)) primes.push(i);
+    return primes.join(" ");
+}
+
+function isPalindrome(str) {
+    str = str.toString().toLowerCase();
+    let reversed = str.split('').reverse().join('');
+    return str === reversed;
+}
+
+function displayResult(type) {
+    let n = document.getElementById("num").value;
+    let result = "";
+
+    if (type === 'factorial') result = "Factorial: " + factorial(parseInt(n));
+    else if (type === 'fibonacci') result = "Fibonacci Series: " + fibonacci(parseInt(n));
+    else if (type === 'prime') result = "Prime Numbers: " + primeNumbers(parseInt(n));
+    else if (type === 'palindrome')
+        result = isPalindrome(n) ? n + " is a Palindrome" : n + " is not a Palindrome";
+
+    document.getElementById("output").innerHTML = result;
+}
+</script>
+</head>
+<body>
+
+<h2>Number Operations</h2>
+
+Enter a number or text: <input type="text" id="num">
+<br><br>
+
+<button onclick="displayResult('factorial')">Factorial</button>
+<button onclick="displayResult('fibonacci')">Fibonacci</button>
+<button onclick="displayResult('prime')">Prime</button>
+<button onclick="displayResult('palindrome')">Palindrome</button>
+
+<p id="output"></p>
+
+</body>
+</html>
