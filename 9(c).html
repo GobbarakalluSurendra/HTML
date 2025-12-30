@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Registration Form Validation</title>
+<script>
+function validateName() {
+  let name = document.getElementById("name").value;
+  let pattern = /^[A-Za-z][A-Za-z0-9]{5,}$/; 
+  let msg = pattern.test(name)
+    ? "Valid Name"
+    : "Invalid Name (should start with alphabet, contain alphanumerics, and be at least 6 characters long)";
+  document.getElementById("nameResult").innerHTML = msg;
+}
+
+function validateMobile() {
+  let mobile = document.getElementById("mobile").value;
+  let pattern = /^[0-9]{10}$/;
+  let msg = pattern.test(mobile)
+    ? "Valid Mobile Number"
+    : "Invalid Mobile Number (must contain only 10 digits)";
+  document.getElementById("mobileResult").innerHTML = msg;
+}
+
+function validateEmail() {
+  let email = document.getElementById("email").value;
+  let pattern = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
+  let msg = pattern.test(email)
+    ? "Valid Email Address"
+    : "Invalid Email (should be in format: name@domain.com)";
+  document.getElementById("emailResult").innerHTML = msg;
+}
+</script>
+</head>
+<body>
+<h2>Registration Form Field Validation</h2>
+<label>Name:</label> 
+<input type="text" id="name">
+<button onclick="validateName()">Validate Name</button>
+<p><b>Name Validation Result:</b><br><span id="nameResult"></span></p>
+<label>Mobile:</label> 
+<input type="text" id="mobile">
+<button onclick="validateMobile()">Validate Mobile</button>
+<p><b>Mobile Validation Result:</b><br><span id="mobileResult"></span></p>
+<label>Email:</label> 
+<input type="text" id="email">
+<button onclick="validateEmail()">Validate Email</button>
+<p><b>Email Validation Result:</b><br><span id="emailResult"></span></p>
+</body>
+</html>
