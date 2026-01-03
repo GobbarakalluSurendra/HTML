@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="utf-8" />
+ <meta name="viewport" content="width=device-width, initial-scale=1" />
+ <title>Internal & External JavaScript Demo</title>
+ <!-- External JS file -->
+ <script src="app.js" defer></script>
+ <!-- Internal (embedded) JS -->
+ <script>
+ // Runs after the HTML is parsed
+ document.addEventListener("DOMContentLoaded", () => {
+ const internalBtn = document.getElementById("internalBtn");
+ const output = document.getElementById("output");
+ internalBtn.addEventListener("click", () => {
+ const now = new Date().toLocaleTimeString();
+ output.textContent = `Internal JS says: Hello! Time is ${now}`;
+ });
+ });
+ </script>
+ <style>
+ body { font-family: system-ui, Arial, sans-serif; margin: 2rem; }
+ button { padding: 0.6rem 1rem; margin-right: 0.5rem; }
+ #output { margin-top: 1rem; font-weight: 600; }
+ </style>
+</head>
+<body>
+ <h1>Embed Internal & External JavaScript</h1>
+ <button id="internalBtn">Click (Internal JS)</button>
+ <button id="externalBtn">Click (External JS)</button>
+ <div id="output">Output will appear here…</div>
+</body>
+</html>
