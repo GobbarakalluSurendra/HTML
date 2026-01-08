@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>css styles:external vs internal vs inline</title>
+<link rel="stylesheet" href="styles.css"/>//need to create a styles.css file
+<style>
+h2{color:darkslateblue;}
+.note{background-color:#fff7cc;padding:0.5rem;}
+#priority{border-left:6px solid tomato;padding-left:0.5rem;}
+.card p{margin:0.25rem 0;}
+a:hover{text-decoration:underline;}
+</style>
+</head>
+<body>
+<header class="container">
+<h1>demonstrating css styles</h1>
+<p class="muted">external, internal, and inline styles+selectors</p>
+</header>
+<main class="container">
+<section class="card">
+<h2>external styles(from<code>styles.css</code>)</h2>
+<p>
+<this paragraph picks styles from the external file via the
+<code>p</code>and<code>.muted</code></code>.card</code>selectors.
+</p>
+<a href="#">Hover me(pseudo-class)</a>
+</section>
+<section class="card">
+<h2>internal styles(in &lt;style&gt;)</h2>
+<p class="note">Selector: <code>.note</code> → Property: <code>backgroundcolor</code> → Value: <code>#fff7cc</code></p>
+ <p id="priority">Selector: <code>#priority</code> → Property: <code>border-left</code>
+→ Value: <code>6px solid tomato</code></p>
+ </section>
+ <section class="card">
+ <h2>Inline Styles (highest specificity)</h2>
+ <p style="color: purple; font-weight: bold;">
+ This line uses <strong>inline</strong> styles:
+ selector is the element itself, properties are <code>color</code> and <code>fontweight</code>,
+ values are <code>purple</code> and <code>bold</code>.
+ </p>
+ <p>
+ Specificity demo: the external file sets <code>.demo</code> to blue,
+ internal sets it to green, but the inline below forces red.
+ </p>
+ <p class="demo" style="color: red;">I will be red because inline &gt; internal &gt;
+external.</p>
+ </section>
+ </main>
+ <footer class="container muted">© CSS Demo</footer>
+</body>
